@@ -21,7 +21,7 @@ class PharmacyProductSeeder extends Seeder
             $randomPharmacies = $pharmacies->random(rand(1, 5));
 
             foreach ($randomPharmacies as $pharmacy) {
-                $product->pharmacies()->attach($pharmacy->id);
+                $product->pharmacies()->attach($pharmacy->id, ['price' => rand(10, 100)]);
             }
         }
     }
