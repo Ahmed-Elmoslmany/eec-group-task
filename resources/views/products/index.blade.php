@@ -2,10 +2,9 @@
 
 @section('content')
 <div class="overflow-x-auto">
-    <a href="{{ route('products.create')}}"
-        class="inline-block px-4 py-2 mb-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition">
-        Create
-    </a>
+    <div class='flex flex-col'>
+        @include('partials.search')
+    </div>
     <table class="min-w-full table-auto border-collapse">
         <thead>
             <tr class="bg-blue-600 text-white text-left">
@@ -33,7 +32,7 @@
                     <td class="py-3 px-6 text-center space-x-2">
 
                         <a href="{{ route('products.show', $product->id) }}"
-                            class="inline-block px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition">
+                            class="inline-block px-4 py-2 bg-indigo-500 text-white rounded-md hover:bg-indigo-600 transition">
                             Show
                         </a>
 

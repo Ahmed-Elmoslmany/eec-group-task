@@ -34,4 +34,8 @@ class ProductRepository
     {
         return Product::with('pharmacies')->paginate($perPage);
     }
+
+    public function search($query, $perPage = 5){
+        return Product::where('title', 'like', '%' . $query . '%')->paginate(15);
+    }
 }

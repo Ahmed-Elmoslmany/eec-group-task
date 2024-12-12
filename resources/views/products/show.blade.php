@@ -45,5 +45,6 @@
         @endif
     </div>
     </form>
+@include('partials.pharmacies')
 </div>
 @endsection

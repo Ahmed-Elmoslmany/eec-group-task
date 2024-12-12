@@ -41,4 +41,8 @@ class ProductService
     {
         return $this->productRepo->find($id);
     }
+
+    public function getSearchedProducts($query ,$perPage = 5){
+        return $this->productRepo->search($query, $perPage);
+    }
 }
