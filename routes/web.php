@@ -8,6 +8,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/search', [ProductController::class, 'search'])->name('products.search');
+Route::get('/products/search', [ProductController::class, 'search'])->name('products.search');
 Route::resource('products', ProductController::class);
 Route::resource('pharmacy', PharmacyController::class);

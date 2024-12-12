@@ -22,7 +22,7 @@
                     <td class="py-3 px-6 text-center space-x-2">
 
                         <a href="{{ route('pharmacy.show', $pharmacy->id) }}"
-                            class="inline-block px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition">
+                            class="inline-block px-4 py-2 bg-indigo-500 text-white rounded-md hover:bg-indigo-600 transition">
                             Show
                         </a>
 
