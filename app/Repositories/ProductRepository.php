@@ -38,4 +38,11 @@ class ProductRepository
     public function search($query, $perPage = 5){
         return Product::where('title', 'like', '%' . $query . '%')->paginate(15);
     }
+
+    public function productInPharmacies(int $productId): ?Product
+    {
+        return Product::with(['pharmacies' => function ($query) {
+            $query->orderBy('pivot_price', 'asc');
+        }])->find($productId);
+    }
 }

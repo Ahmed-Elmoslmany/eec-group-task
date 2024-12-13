@@ -45,4 +45,21 @@ class ProductService
     public function getSearchedProducts($query ,$perPage = 5){
         return $this->productRepo->search($query, $perPage);
     }
+
+    public function getCheapestPharmacies(int $productId, int $numOfPharmacies = 5): ?array
+    {
+        $product = $this->productRepo->productInPharmacies($productId);
+
+        if (!$product) {
+            return null;
+        }
+
+        return $product->pharmacies->take($numOfPharmacies)->map(function ($pharmacy) {
+            return [
+                'id' => $pharmacy->id,
+                'name' => $pharmacy->name,
+                'price' => $pharmacy->pivot->price,
+            ];
+        })->toArray();
+    }
 }
