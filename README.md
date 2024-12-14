@@ -12,5 +12,6 @@
 - Then run this `composer install && npm install && php artisan key:generate && php artisan migrate --seed`.
 - Then run `php artisan serve` and `npm run dev` in two seperate terminals.
 - Then open the browser and hit http://localhost:8000/ you will automatically get redirected to http://localhost:8000/products
+- To show API routes run `php artisan route:list'
   
 
