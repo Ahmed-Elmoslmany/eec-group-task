@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductUpdateRequest;
-use App\Models\Product;
 use App\Services\ProductService;
 use Illuminate\Http\Request;
 use App\Http\Requests\ProductStoreRequest;

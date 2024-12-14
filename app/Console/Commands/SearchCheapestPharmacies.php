@@ -13,7 +13,7 @@ class SearchCheapestPharmacies extends Command
      *
      * @var string
      */
-    protected $signature = 'product:search-cheapest-pharmacies {productId : The product id to search} {pharmacies=5 : The number of pharmacies}';
+    protected $signature = 'products:search-cheapest {productId : The product id to search} {pharmacies=5 : The number of pharmacies}';
 
     /**
      * The console command description.

@@ -4,8 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\Pharmacy;
 use App\Models\Product;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class PharmacyProductSeeder extends Seeder
 {
@@ -14,15 +14,24 @@ class PharmacyProductSeeder extends Seeder
      */
     public function run(): void
     {
-        $products = Product::factory(200)->create(); 
-        $pharmacies = Pharmacy::factory(500)->create(); 
+        $products = Product::factory(5000)->create();
+        $pharmacies = Pharmacy::factory(2000)->create();
 
+        $pivotData = []; 
+        
         foreach ($products as $product) {
-            $randomPharmacies = $pharmacies->random(rand(1, 5));
-
+            $randomPharmacies = $pharmacies->random(rand(1, 20));
+            
             foreach ($randomPharmacies as $pharmacy) {
-                $product->pharmacies()->attach($pharmacy->id, ['price' => rand(10, 100)]);
+                $pivotData[] = [
+                    'product_id' => $product->id,
+                    'pharmacy_id' => $pharmacy->id,
+                    'price' => rand(10, 100),
+                ];
             }
         }
+        
+        DB::table('pharmacy_product')->insert($pivotData);
+        
     }
 }
