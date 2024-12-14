@@ -912,7 +912,7 @@
         <header class="bg-white shadow-md">
             <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
                 <a href="{{ url('/') }}" class="text-2xl font-bold text-gray-800">
-                    {{ config('app.name', 'Laravel') }}
+                    EEC Group
                 </a>
                 <div class="space-x-4">
                     <a href="{{ route('products.index') }}" class="text-gray-600 hover:text-blue-500 transition-colors">
