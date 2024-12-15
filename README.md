@@ -13,5 +13,7 @@
 - Then run `php artisan serve` and `npm run dev` in two seperate terminals.
 - Then open the browser and hit http://localhost:8000/ you will automatically get redirected to http://localhost:8000/products
 - To show API routes run `php artisan route:list'
-  
+- Also you could try this CLI Command `php artisan products:search-cheapest <ProductId>` that takes product id and returns cheapest 5 pharmacies (id, name, price)
+have this product in a JSON format (eg: `PHP artisan products:search-cheapest 22` ).
+- By default the number of pharmacies is 5 but you could pass another parameter as pharmacies number then the command should be `php artisan products:search-cheapest <ProductId> <PharmaciesNumber>` (eg: `PHP artisan products:search-cheapest 22 10` ) return 10 cheapest pharmacies have this product.
 
